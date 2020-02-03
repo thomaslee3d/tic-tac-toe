@@ -6,11 +6,22 @@
 // require('./example')
 // This allows us to import the object that was exported
 // in book/events. So we can use `onGetBooks`
-const gameEvents = require('./auth/events')
+const gameAuth = require('./auth/events')
+const gameEvents = require('./games/events')
+
 $(() => {
-  $('#sign-up').on('submit', gameEvents.onSignUp)
-  $('#sign-in').on('submit', gameEvents.onSignIn)
-  $('#change-password').on('submit', gameEvents.onChangePassword)
+  $('#sign-up').on('submit', gameAuth.onSignUp)
+  $('#sign-in').on('submit', gameAuth.onSignIn)
+  $('#change-password').on('submit', gameAuth.onChangePassword)
   $('#new-game').on('submit', gameEvents.onCreateGame)
-  $('#col-4 box').on('submit', gameEvents.onGameBtnClick)
+  $('.box').on('submit', gameEvents.onGameBtnClick)
+  // $('.gameboard').on('click', (event) => {
+  //   $(event.target).text('x')
+  // })
+  let currentPlayer = 'x'
+  $('.box').on('click', function (event) {
+    console.log('click - app.js')
+    $(event.target).text(currentPlayer)
+    currentPlayer = currentPlayer === 'O' ? currentPlayer = 'X' : currentPlayer = 'O'
+  })
 })

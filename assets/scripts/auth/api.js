@@ -32,34 +32,8 @@ const changePassword = function (data) {
   })
 }
 
-const createGame = function (data) {
-  console.log(data)
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: data
-  })
-}
-
-const gameBtnClick = function (data) {
-  console.log(data)
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'PATCH',
-    header: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: data
-  })
-}
-
 module.exports = {
   signUp,
   signIn,
-  changePassword,
-  createGame,
-  gameBtnClick
+  changePassword
 }
