@@ -14,34 +14,53 @@
     <body>
       <div class='container-fluid'>
         <div class='row'>
-          <div=class'col-3'>
-          <form class="sign-up">
-              <input id="email"type='text'value="email">
-              <input id="password"type='text' value="password">
-              <input id="password_confirmation"type='text'value="confirm" >
-              <input id="submit" type='submit'value='sign up'>
+          <div class='col-3'>
+            <p id='message'></p>
+            <form id="sign-up">
+              <input name="credentials[email]" type="text" value="an@example.email">
+              <input name="credentials[password]" type="password" value="an example password">
+              <input name="credentials[password_confirmation]" type="password" value="password">
+              <input type='submit'value='sign up'>
+            </form>
+            <form id="sign-in">
+              <input name="credentials[email]" type="text" value="an@example.email">
+              <input name="credentials[password]" type="password" value="password">
+              <input type='submit'value='sign in'>
             </form>
           </div>
-              <button class='logOutBtn'>log out</button>
-              <button class='restartBtn'>restart</button>
-            <div class='col-3'>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <input type='text'value="email"value="email">
-                <input type='text'value="password"value="password">
-                <input type='text'value="new_password"value="update password">
-                <button class='updatePasswordBtn'>update password</button>
-                <input name="email"type='text' value="email">
-                <input name="password" type='text' value="password">
-                <input type="submit" value='log in'>
+          <!-- </div>
+          <div class="col-3"> -->
+            <p id='user'></p>
+            <p id='game-number'>
+            </p>
+            <div class='container-fluid'>
+              <div class='row h-100 board'>
+                    <div type="submit" data-cell-index='0' class="col-4 box" value="#"></div>
+                    <div type="submit" data-cell-index='1' class="col-4 box" value="#"></div>
+                    <div type="submit" data-cell-index='2' class="col-4 box" value="#"></div>
+                    <div type="submit" data-cell-index='3' class="col-4 box" value="#"></div>
+                    <div type="submit" data-cell-index='4' class="col-4 box" value="#"></div>
+                    <div type="submit" data-cell-index='5' class="col-4 box" value="#"></div>
+                    <div type="submit" data-cell-index='6' class="col-4 box" value="#"></div>
+                    <div type="submit" data-cell-index='7' class="col-4 box" value="#"></div>
+                    <div type="submit" data-cell-index='8' class="col-4 box" value="#"></div>
+              </div>
             </div>
-        </div>
-    </body>
+            <form id="new-game">
+                <input type='submit' value="new game">
+            </form>
+            <form id ="change-password">
+                <input name="passwords[old]" type="password">
+                <input name="passwords[new]" type="password">
+                <input type='submit' value="change-password">
+            </form>
+
+            <br />
+          <!-- </div>
+          <div class="col-3"> -->
+
+          </div>
+       </div>
+
+  </body>
 </html>
