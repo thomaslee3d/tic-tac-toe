@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>tic tac toe</title>
+      <title>Example</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,43 +12,55 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h3 class='message'></p>
       <div class='container-fluid'>
         <div class='row'>
-          <div=class'col-3'>
-            <form id="sign-up-form">
-              <input class="email" type='text' value="email">
-              <input class="password" type='text' value="password">
-              <input class="password-confirmation" type='text' value="confirm" >
-              <input id="sign-up" type='submit' value='sign up'>
+          <div class='col-3'>
+            <p id='message'></p>
+            <form id="sign-up">
+              <input name="credentials[email]" type="text" value="an@example.email">
+              <input name="credentials[password]" type="password" value="an example password">
+              <input name="credentials[password_confirmation]" type="password" value="password">
+              <input type='submit'value='sign up'>
+            </form>
+            <form id="sign-in">
+              <input name="credentials[email]" type="text" value="email">
+              <input name="credentials[password]" type="password" value="password">
+              <input type='submit'value='sign in'>
             </form>
           </div>
-              <input class='logOutBtn' type='submit' value='log out'>
-              <input class='new-game' type='submit' value='new game'>
-            <div class='col-3'>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-                <button class='gameBoardBtn'>#</button>
-
-              <form id="change-password-form">
-                  <input type='text'value="email"value="email">
-                  <input type='text'value="password"value="password">
-                  <input type='text'value="new-password"value="update password">
-                  <input id='change-password' type='submit' value='update password'>
-              </form>
-
-              <form id="sign-in-form">
-                  <input name="email"type='text' value="email">
-                  <input name="password" type='text' value="password">
-                  <input id="sign-in" type="submit" value='log in'>
-              </form>
+          <!-- </div>
+          <div class="col-3"> -->
+            <p id='user'></p>
+            <p id='game-number'>
+            </p>
+            <div class='container-fluid'>
+              <div class='row h-100 board'>
+                    <div data-cell-index='0' class="col-4 box">#</div>
+                    <div data-cell-index='1' class="col-4 box">#</div>
+                    <div data-cell-index='2' class="col-4 box">#</div>
+                    <div data-cell-index='3' class="col-4 box">#</div>
+                    <div data-cell-index='4' class="col-4 box">#</div>
+                    <div data-cell-index='5' class="col-4 box">#</div>
+                    <div data-cell-index='6' class="col-4 box">#</div>
+                    <div data-cell-index='7' class="col-4 box">#</div>
+                    <div data-cell-index='8' class="col-4 box">#</div>
+              </div>
             </div>
-        </div>
-    </body>
+            <form id="new-game">
+                <input type='submit' value="new game">
+            </form>
+            <form id ="change-password">
+                <input name="passwords[old]" type="password">
+                <input name="passwords[new]" type="password">
+                <input type='submit' value="change-password">
+            </form>
+
+            <br />
+          <!-- </div>
+          <div class="col-3"> -->
+
+          </div>
+       </div>
+
+  </body>
 </html>
