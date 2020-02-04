@@ -2,6 +2,7 @@
 
 const store = require('./../store')
 $('#new-game').hide()
+$('#row h-100 board').hide()
 
 const onSignUpSuccess = function (response) {
   $('#message').text(response.user.email + ' Signed Up!')
@@ -21,7 +22,7 @@ const onSignInSuccess = function (response) {
   store.user = response.user
   $('#message').text(response.user.email + ' Signed In')
   $('#user').text(response.user.email + ' Active User')
-  $('#game-number').text('game-number' + response.user.id)
+  $('#game-number').text('game-number ' + response.user.id)
   $('#sign-in').trigger('reset')
   $('#sign-up').trigger('reset')
   $('#message').addClass('message')
@@ -43,10 +44,15 @@ const onChangePasswordSuccess = function (response) {
   $('#message').addClass('message')
 }
 
+const onNewGameBtnClick = function (response) {
+  $('#row h-100 board').show()
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
-  onChangePasswordSuccess
+  onChangePasswordSuccess,
+  onNewGameBtnClick
 }

@@ -1,4 +1,3 @@
-
 'use strict'
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
@@ -6,6 +5,7 @@
 // require('./example')
 // This allows us to import the object that was exported
 // in book/events. So we can use `onGetBooks`
+
 const gameAuth = require('./auth/events')
 const gameEvents = require('./games/events')
 
@@ -19,8 +19,9 @@ $(() => {
   //   $(event.target).text('x')
   // })
   let currentPlayer = 'x'
-  $('.box').on('click', function (event) {
-    console.log('click - app.js')
+
+  $('.box').on('submit', function (event) {
+    console.log('submit - app.js')
     $(event.target).text(currentPlayer)
     currentPlayer = currentPlayer === 'O' ? currentPlayer = 'X' : currentPlayer = 'O'
   })

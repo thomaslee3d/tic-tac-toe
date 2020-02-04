@@ -2,7 +2,10 @@
 
 const store = require('./../store')
 
-const onCreateGameSuccess = function (reponse) {
+const onCreateGameSuccess = function (response) {
+  console.log('onCreateGameSuccess games/ui.js')
+  $('#row h-100 board').hide()
+  store.game = response.game
   $('#createGame').trigger('reset')
 }
 
@@ -11,7 +14,7 @@ const onCreateGameFailure = function (response) {
 }
 
 const onGameBtnClickSuccess = function (response) {
-  store.user = response.user
+  store.game = response.game
   console.log('Game Button Click ui.js')
 }
 
