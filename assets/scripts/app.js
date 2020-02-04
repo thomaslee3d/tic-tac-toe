@@ -9,7 +9,7 @@ const gameAuth = require('./auth/events')
 const gameEvents = require('./games/events')
 
 $(() => {
-  $('#sign-up').on('submit', gameAuth.onSignUp)
+  $('#sign-up-form').on('submit', gameAuth.onSignUp)
   $('#sign-in').on('submit', gameAuth.onSignIn)
   $('#change-password').on('submit', gameAuth.onChangePassword)
   $('#new-game').on('submit', gameEvents.onCreateGame)
