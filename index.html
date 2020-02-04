@@ -15,11 +15,11 @@
       <div class='container-fluid'>
         <div class='row'>
           <div=class'col-3'>
-          <form class="sign-up">
+          <form id="sign-up">
               <input id="email"type='text'value="email">
               <input id="password"type='text' value="password">
               <input id="password_confirmation"type='text'value="confirm" >
-              <input id="submit" type='submit'value='sign up'>
+              <input id="sign-up" type='submit'value='sign up'>
             </form>
           </div>
               <button class='logOutBtn'>log out</button>
@@ -34,13 +34,17 @@
                 <button class='gameBoardBtn'>#</button>
                 <button class='gameBoardBtn'>#</button>
                 <button class='gameBoardBtn'>#</button>
-                <input type='text'value="email"value="email">
-                <input type='text'value="password"value="password">
-                <input type='text'value="new_password"value="update password">
-                <button class='updatePasswordBtn'>update password</button>
-                <input name="email"type='text' value="email">
-                <input name="password" type='text' value="password">
-                <input type="submit" value='log in'>
+              <form id="change-password">
+                  <input type='text'value="email"value="email">
+                  <input type='text'value="password"value="password">
+                  <input type='text'value="new_password"value="update password">
+                  <input id='update-password' type='submit' value='update password'>
+              </form>
+              <form id="log-in">
+                  <input name="email"type='text' value="email">
+                  <input name="password" type='text' value="password">
+                  <input id="log-in" type="submit" value='log in'>
+              </form>
             </div>
         </div>
     </body>
