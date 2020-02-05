@@ -1,12 +1,11 @@
 'use strict'
 
 const store = require('./../store')
-
+$('#gameBoard').hide()
 const onCreateGameSuccess = function (response) {
   console.log('onCreateGameSuccess games/ui.js')
-  $('#row h-100 board').hide()
   store.game = response.game
-  $('#createGame').trigger('reset')
+  $('#gameBoard').show()
 }
 
 const onCreateGameFailure = function (response) {

@@ -17,47 +17,35 @@ const createGame = function (data) {
 }
 
 const gameBtnClick = function (data) {
+  const cell = store.cell
+  const value = store.currentPlayer
+
+  console.log('sending ajax cell ' + cell)
+  console.log('sending ajax value ' + value)
   console.log(data)
   console.log('this is my store api.js ', store.game)
 
-  // // console.log(`/games/${store.game.id}`)
-  // console.log(store.game.token)
-  // console.log('gameBtnClick games/api.js')
-  //
-  // const gameCell =
-  // const gameBoard = [ '','', '', '', '', '', '', '','']
-  //
-  // for(let i = 0; i < gameBoard.length; i++){
+  // for(let i = 0; i < gameBoardArray.length; i++){
   //   if(i === )
   // }
 
   return $.ajax({
-    url: config.apiUrl + `games/${store.game}`,
+    url: config.apiUrl + `games/${store.game.id}`,
     method: 'PATCH',
-    header: {
+    headers: {
       Authorization: 'Token token=' + store.user.token
     },
     data: {
       game: {
         cell: {
-          index: 0,
-          value: 'x'
+          index: cell,
+          value: value
         },
         over: false
       }
     }
   })
 }
-// const changePassword = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/change-password',
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data: data
-//   })
-// }
 
 module.exports = {
   createGame,

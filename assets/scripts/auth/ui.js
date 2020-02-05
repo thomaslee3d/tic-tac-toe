@@ -2,7 +2,7 @@
 
 const store = require('./../store')
 $('#new-game').hide()
-$('#row h-100 board').hide()
+
 
 const onSignUpSuccess = function (response) {
   $('#message').text(response.user.email + ' Signed Up!')
@@ -44,15 +44,10 @@ const onChangePasswordSuccess = function (response) {
   $('#message').addClass('message')
 }
 
-const onNewGameBtnClick = function (response) {
-  $('#row h-100 board').show()
-}
-
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
-  onChangePasswordSuccess,
-  onNewGameBtnClick
+  onChangePasswordSuccess
 }

@@ -17,11 +17,4 @@ $(() => {
   // $('.gameboard').on('click', (event) => {
   //   $(event.target).text('x')
   // })
-  let currentPlayer = 'x'
-
-  $('.box').on('submit', function (event) {
-    console.log('submit - app.js')
-    $(event.target).text(currentPlayer)
-    currentPlayer = currentPlayer === 'O' ? currentPlayer = 'X' : currentPlayer = 'O'
-  })
 })
