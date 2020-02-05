@@ -15,7 +15,7 @@
       <div class='container-fluid'>
         <div class='row'>
           <div class='col-3'>
-            <p id='message'></p>
+
             <form id="sign-up">
               <input name="credentials[email]" type="text" placeholder="an@example.email">
               <input name="credentials[password]" type="password" placeholder="an example password">
@@ -27,16 +27,18 @@
               <input name="credentials[password]" type="password" placeholder="password">
               <input type='submit'value='sign in'>
             </form>
-          </div>
-          <!-- </div>
-          <div class="col-3"> -->
-            <p id='user'></p>
-            <p id='game-number'>
-            </p>
+            <form id="new-game">
+                <h4 id='game-number' value='Game Number'></h4>
+                <input type='submit' value="new game">
+            </form>
 
+          </div>
+          <h3 class="user-message"></h3>
+          <h3 class="game-message"></h3>
             <form id='gameBoard'>
             <div class='container-fluid'>
               <div class='row board'>
+
                     <div data-cell-index='0' class="col-4 box">$</div>
                     <div data-cell-index='1' class="col-4 box">$</div>
                     <div data-cell-index='2' class="col-4 box">$</div>
@@ -49,15 +51,13 @@
               </div>
             </div>
           </form>
+          <form id ="change-password">
+              <input name="passwords[old]" type="password">
+              <input name="passwords[new]" type="password">
+              <input type='submit' value="change-password">
+          </form>
 
-            <form id="new-game">
-                <input type='submit' value="new game">
-            </form>
-            <form id ="change-password">
-                <input name="passwords[old]" type="password">
-                <input name="passwords[new]" type="password">
-                <input type='submit' value="change-password">
-            </form>
+
 
             <br />
           <!-- </div>

@@ -1,47 +1,47 @@
 'use strict'
 
 const store = require('./../store')
-$('#new-game').hide()
+$('#change-password').hide()
+$('#game-ctrl').hide()
 
 
 const onSignUpSuccess = function (response) {
-  $('#message').text(response.user.email + ' Signed Up!')
+  $('.user-message').text(response.user.email + ' Signed Up!')
   $('#sign-up').trigger('reset')
-  $('#message').addClass('message')
   $('#sign-up').hide()
   console.log(response)
 }
 
 const onSignUpFailure = function (response) {
-  $('#message').removeClass()
-  $('#message').addClass('invalid sign up  attempt')
+  $('.user-message').text('Failed Sign Up Attempt!')
   console.log(response)
 }
 
 const onSignInSuccess = function (response) {
   store.user = response.user
   $('#message').text(response.user.email + ' Signed In')
-  $('#user').text(response.user.email + ' Active User')
-  $('#game-number').text('game-number ' + response.user.id)
+  $('.user-message').text(' Active User : ' + response.user.email)
   $('#sign-in').trigger('reset')
   $('#sign-up').trigger('reset')
-  $('#message').addClass('message')
-  $('#new-game').show()
+  $('#game-ctrl').show()
+  $('#change-password').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
   console.log(response)
 }
 
 const onSignInFailure = function (response) {
-  $('#message').removeClass()
-  $('#message').addClass('sign in failed')
+  $('.user-message').text('Failed Sign In Attempt!')
   console.log(response)
 }
 
 const onChangePasswordSuccess = function (response) {
-  $('#message').text(' Password Changed')
+  $('.user-message').text(`Active user : ${response.user.email} - Has Updated Password`)
   $('#change-password').trigger('reset')
-  $('#message').addClass('message')
+}
+const onChangePasswordFailure = function (response) {
+  $('.user-message').text(`Active user : ${response.user.email} - Failed Password Update!`)
+  $('#change-password').trigger('reset')
 }
 
 module.exports = {
@@ -49,5 +49,6 @@ module.exports = {
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
-  onChangePasswordSuccess
+  onChangePasswordSuccess,
+  onChangePasswordFailure
 }

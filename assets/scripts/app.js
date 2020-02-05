@@ -14,6 +14,7 @@ $(() => {
   $('#change-password').on('submit', gameAuth.onChangePassword)
   $('#new-game').on('submit', gameEvents.onCreateGame)
   $('.box').on('click', gameEvents.onGameBtnClick)
+  $('#refresh-game').on('submit', gameEvents.onRefreshGame)
   // $('.gameboard').on('click', (event) => {
   //   $(event.target).text('x')
   // })

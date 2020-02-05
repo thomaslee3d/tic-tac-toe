@@ -6,6 +6,7 @@ const api = require('./api')
 const ui = require('./ui')
 
 let currentPlayer = 'x'
+
 let cell = ''
 
 const gameArray = ['', '', '', '', '', '', '', '', '']
@@ -45,6 +46,26 @@ const onGameBtnClick = function (event) {
 
     gameArray[cell] = currentPlayer
 
+    if (gameArray[0] === currentPlayer && gameArray[1] === currentPlayer && gameArray[2] === currentPlayer) {
+      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+    } else if (gameArray[3] === currentPlayer && gameArray[4] === currentPlayer && gameArray[5] === currentPlayer) {
+      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+    } else if (gameArray[6] === currentPlayer && gameArray[7] === currentPlayer && gameArray[8] === currentPlayer) {
+      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+    } else if (gameArray[0] === currentPlayer && gameArray[3] === currentPlayer && gameArray[6] === currentPlayer) {
+      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+    } else if (gameArray[1] === currentPlayer && gameArray[4] === currentPlayer && gameArray[7] === currentPlayer) {
+      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+    } else if (gameArray[2] === currentPlayer && gameArray[5] === currentPlayer && gameArray[8] === currentPlayer) {
+      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+    } else if (gameArray[0] === currentPlayer && gameArray[4] === currentPlayer && gameArray[8] === currentPlayer) {
+      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+    } else if (gameArray[2] === currentPlayer && gameArray[4] === currentPlayer && gameArray[6] === currentPlayer) {
+      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+    } else {
+      checkGameStatus(gameArray, currentPlayer)
+    }
+
     console.log('game array : ' + gameArray)
 
     console.log('use value : ' + currentPlayer)
@@ -56,7 +77,40 @@ const onGameBtnClick = function (event) {
   }
 }
 
+const checkGameStatus = function (array, player) {
+  const activePlayer = player
+  const gameBoardArray = array
+  for (let i = 0; i < array.length; i++) {
+    if (gameBoardArray.includes('')) {
+      $('.user-message').text(`${activePlayer}'s Turn!'`)
+    } else {
+      $('.user-message').text('Draw !!!')
+    }
+  }
+}
+
+const switchPlayer = function (player) {
+  if (player === 'x') {
+    store.currentPlayer = 'x'
+    player = 'o'
+  } else if (currentPlayer === 'o') {
+    store.currentPlayer = 'o'
+    player = 'x'
+  }
+  return player
+}
+
+const onRefreshGame = function (event) {
+  event.preventDefault()
+  console.log('refresh ')
+  const form = event.target
+  const getForm = getFormFields(form)
+  api.gameBtnClick(getForm)
+    .then(ui.onRefreshGameSuccess)
+    .catch(ui.onRefreshGameFailure)
+}
 module.exports = {
   onCreateGame,
-  onGameBtnClick
+  onGameBtnClick,
+  onRefreshGame
 }
