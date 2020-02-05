@@ -6,7 +6,6 @@ $('#gameBoard').hide()
 
 const onCreateGameSuccess = function (response) {
   $('.user-message').text('New Game!')
-  console.log('onCreateGameSuccess games/ui.js')
   store.game = response.game
   $('#game-number').text('game-number ' + store.game.id)
   $('#gameBoard').show()
@@ -16,7 +15,6 @@ const onCreateGameSuccess = function (response) {
 const onRefreshGameSuccess = function (user) {
   $('.user-message').text('New Game!')
   store.game = user.game
-  console.log('onCreateGameSuccess games/ui.js')
   $('.col-4').text('$')
 }
 const onRefreshGameFailure = function () {

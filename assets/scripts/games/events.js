@@ -14,7 +14,6 @@ const gameArray = ['', '', '', '', '', '', '', '', '']
 const onCreateGame = function (event) {
   event.preventDefault()
   currentPlayer = 'x'
-  console.log('New Game Created games/events.js')
   const form = event.target
   const getForm = getFormFields(form)
   api.createGame(getForm)
@@ -24,15 +23,11 @@ const onCreateGame = function (event) {
 
 const onGameBtnClick = function (event) {
   event.preventDefault()
-  console.log('Game Button Pressed games/events.js')
   const form = event.target
   const getForm = getFormFields(form)
 
-  console.log('submit - app.js')
-
   if ($(event.target).text() === '$') {
     $(event.target).text(currentPlayer)
-    console.log($(event.target).text() + ' text value')
     if (currentPlayer === 'x') {
       store.currentPlayer = 'x'
       currentPlayer = 'o'
@@ -66,11 +61,6 @@ const onGameBtnClick = function (event) {
       checkGameStatus(gameArray, currentPlayer)
     }
 
-    console.log('game array : ' + gameArray)
-
-    console.log('use value : ' + currentPlayer)
-    console.log('cell # : ' + store.cell)
-
     api.gameBtnClick(getForm)
       .then(ui.onGameBtnClickSuccess)
       .catch(ui.onGameBtnClickFailure)
@@ -102,7 +92,6 @@ const switchPlayer = function (player) {
 
 const onRefreshGame = function (event) {
   event.preventDefault()
-  console.log('refresh ')
   const form = event.target
   const getForm = getFormFields(form)
   api.gameBtnClick(getForm)
