@@ -4,7 +4,6 @@ const store = require('./../store')
 $('#change-password').hide()
 $('#game-ctrl').hide()
 
-
 const onSignUpSuccess = function (response) {
   $('.user-message').text(response.user.email + ' Signed Up!')
   $('#sign-up').trigger('reset')
@@ -13,7 +12,7 @@ const onSignUpSuccess = function (response) {
 
 const onSignUpFailure = function (response) {
   $('.user-message').text('Failed Sign Up Attempt!')
-
+}
 
 const onSignInSuccess = function (response) {
   store.user = response.user
@@ -25,12 +24,10 @@ const onSignInSuccess = function (response) {
   $('#change-password').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
-
 }
 
 const onSignInFailure = function (response) {
   $('.user-message').text('Failed Sign In Attempt!')
-
 }
 
 const onChangePasswordSuccess = function (response) {
