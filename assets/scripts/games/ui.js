@@ -18,21 +18,19 @@ const onRefreshGameSuccess = function (user) {
   $('.col-4').text('$')
 }
 const onRefreshGameFailure = function () {
-  console.log('Fail to Refresh')
+
 }
 
 const onCreateGameFailure = function () {
-  console.log('failed to create game')
+
 }
 
 const onGameBtnClickSuccess = function (response) {
   store.game = response.game
-  console.log('Game Button Click ui.js')
-  console.log(response)
 }
 
 const onGameBtnClickFailure = function () {
-  console.log('Failed to Click')
+
 }
 
 module.exports = {

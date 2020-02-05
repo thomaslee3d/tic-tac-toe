@@ -9,13 +9,11 @@ const onSignUpSuccess = function (response) {
   $('.user-message').text(response.user.email + ' Signed Up!')
   $('#sign-up').trigger('reset')
   $('#sign-up').hide()
-  console.log(response)
 }
 
 const onSignUpFailure = function (response) {
   $('.user-message').text('Failed Sign Up Attempt!')
-  console.log(response)
-}
+
 
 const onSignInSuccess = function (response) {
   store.user = response.user
@@ -27,12 +25,12 @@ const onSignInSuccess = function (response) {
   $('#change-password').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
-  console.log(response)
+
 }
 
 const onSignInFailure = function (response) {
   $('.user-message').text('Failed Sign In Attempt!')
-  console.log(response)
+
 }
 
 const onChangePasswordSuccess = function (response) {
