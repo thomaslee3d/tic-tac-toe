@@ -8,6 +8,8 @@ const ui = require('./ui')
 let currentPlayer = 'x'
 let cell = ''
 
+const gameArray = ['', '', '', '', '', '', '', '', '']
+
 const onCreateGame = function (event) {
   event.preventDefault()
   currentPlayer = 'x'
@@ -29,6 +31,7 @@ const onGameBtnClick = function (event) {
 
   if ($(event.target).text() === '$') {
     $(event.target).text(currentPlayer)
+    console.log($(event.target).text() + ' text value')
     if (currentPlayer === 'x') {
       store.currentPlayer = 'x'
       currentPlayer = 'o'
@@ -36,17 +39,21 @@ const onGameBtnClick = function (event) {
       store.currentPlayer = 'o'
       currentPlayer = 'x'
     }
+
+    cell = $(event.target).attr('data-cell-index')
+    store.cell = cell
+
+    gameArray[cell] = currentPlayer
+
+    console.log('game array : ' + gameArray)
+
+    console.log('use value : ' + currentPlayer)
+    console.log('cell # : ' + store.cell)
+
+    api.gameBtnClick(getForm)
+      .then(ui.onGameBtnClickSuccess)
+      .catch(ui.onGameBtnClickFailure)
   }
-
-  cell = $(event.target).attr('data-cell-index')
-  store.cell = cell
-
-  console.log('use value : ' + currentPlayer)
-  console.log('cell # : ' + store.cell)
-
-  api.gameBtnClick(getForm)
-    .then(ui.onGameBtnClickSuccess)
-    .catch(ui.onGameBtnClickFailure)
 }
 
 module.exports = {
