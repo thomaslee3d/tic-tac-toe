@@ -9,11 +9,15 @@ let currentPlayer = 'x'
 
 let cell = ''
 
-const gameArray = ['', '', '', '', '', '', '', '', '']
+let gameArray = ['', '', '', '', '', '', '', '', '']
+let gameOver = false
 
 const onCreateGame = function (event) {
   event.preventDefault()
   currentPlayer = 'x'
+  cell = ''
+  gameArray = ['', '', '', '', '', '', '', '', '']
+  $('.game-message').text('')
   const form = event.target
   const getForm = getFormFields(form)
   api.createGame(getForm)
@@ -26,7 +30,7 @@ const onGameBtnClick = function (event) {
   const form = event.target
   const getForm = getFormFields(form)
 
-  if ($(event.target).text() === '$') {
+  if ($(event.target).text() === '$' && gameOver === false) {
     $(event.target).text(currentPlayer)
     if (currentPlayer === 'x') {
       store.currentPlayer = 'x'
@@ -43,6 +47,7 @@ const onGameBtnClick = function (event) {
 
     if (gameArray[0] === currentPlayer && gameArray[1] === currentPlayer && gameArray[2] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      gameOver = true
     } else if (gameArray[3] === currentPlayer && gameArray[4] === currentPlayer && gameArray[5] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
     } else if (gameArray[6] === currentPlayer && gameArray[7] === currentPlayer && gameArray[8] === currentPlayer) {
@@ -90,16 +95,19 @@ const switchPlayer = function (player) {
   return player
 }
 
-const onRefreshGame = function (event) {
-  event.preventDefault()
-  const form = event.target
-  const getForm = getFormFields(form)
-  api.gameBtnClick(getForm)
-    .then(ui.onRefreshGameSuccess)
-    .catch(ui.onRefreshGameFailure)
-}
+// const onRefreshGame = function (event) {
+//   event.preventDefault()
+//   currentPlayer = 'x'
+//   cell = ''
+//   gameArray = ['', '', '', '', '', '', '', '', '']
+//   const form = event.target
+//   const getForm = getFormFields(form)
+//   api.gameBtnClick(getForm)
+//     .then(ui.onRefreshGameSuccess)
+//     .catch(ui.onRefreshGameFailure)
+// }
+
 module.exports = {
   onCreateGame,
-  onGameBtnClick,
-  onRefreshGame
+  onGameBtnClick
 }

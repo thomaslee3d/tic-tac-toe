@@ -17,6 +17,7 @@ const onRefreshGameSuccess = function (user) {
   store.game = user.game
   $('.col-4').text('$')
 }
+
 const onRefreshGameFailure = function () {
 
 }
@@ -40,4 +41,5 @@ module.exports = {
   onGameBtnClickFailure,
   onRefreshGameSuccess,
   onRefreshGameFailure
+
 }

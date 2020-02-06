@@ -1,8 +1,6 @@
 'use strict'
 
 const store = require('./../store')
-$('#change-password').hide()
-$('#game-ctrl').hide()
 
 const onSignUpSuccess = function (response) {
   $('.user-message').text(response.user.email + ' Signed Up!')
@@ -11,6 +9,7 @@ const onSignUpSuccess = function (response) {
 }
 
 const onSignUpFailure = function (response) {
+  $('#sign-up').trigger('reset')
   $('.user-message').text('Failed Sign Up Attempt!')
 }
 
@@ -20,23 +19,41 @@ const onSignInSuccess = function (response) {
   $('.user-message').text(' Active User : ' + response.user.email)
   $('#sign-in').trigger('reset')
   $('#sign-up').trigger('reset')
-  $('#game-ctrl').show()
   $('#change-password').show()
+  $('#log-out').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
+  $('#new-game').show()
 }
 
 const onSignInFailure = function (response) {
   $('.user-message').text('Failed Sign In Attempt!')
+  $('#sign-in').trigger('reset')
 }
 
 const onChangePasswordSuccess = function (response) {
-  $('.user-message').text(`Active user : ${response.user.email} - Has Updated Password`)
+  $('.user-message').text(`Active user : Has Updated Password`)
   $('#change-password').trigger('reset')
 }
 const onChangePasswordFailure = function (response) {
-  $('.user-message').text(`Active user : ${response.user.email} - Failed Password Update!`)
+  $('.user-message').text(`Active user : Failed Password Update!`)
   $('#change-password').trigger('reset')
+}
+
+const onLogOutSuccess = function (response) {
+  $('.user-message').text('Logged Out')
+  $('#sign-in').trigger('reset')
+  $('#sign-up').trigger('reset')
+  $('#change-password').trigger('reset')
+  $('#change-password').hide()
+  $('#sign-in').show()
+  $('#sign-up').show()
+  $('#new-game').hide()
+  $('#log-out').hide()
+}
+
+const onLogOutFailure = function (response) {
+  $('.user-message').text('Failed to log out')
 }
 
 module.exports = {
@@ -45,5 +62,7 @@ module.exports = {
   onSignInSuccess,
   onSignInFailure,
   onChangePasswordSuccess,
-  onChangePasswordFailure
+  onChangePasswordFailure,
+  onLogOutSuccess,
+  onLogOutFailure
 }

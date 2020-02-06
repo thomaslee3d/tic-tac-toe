@@ -12,6 +12,8 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <h3 class="user-message"></h3>
+      <h3 class="game-message"></h3>
       <div class='container-fluid'>
         <div class='row'>
           <div class='col-3'>
@@ -19,7 +21,7 @@
             <form id="sign-up">
               <input name="credentials[email]" type="text" placeholder="an@example.email">
               <input name="credentials[password]" type="password" placeholder="an example password">
-              <input name="credentials[password_confirmation]" type="password" value="password">
+              <input name="credentials[password_confirmation]" type="password" placeholder="password">
               <input type='submit'value='sign up'>
             </form>
             <form id="sign-in">
@@ -33,12 +35,10 @@
             </form>
 
           </div>
-          <h3 class="user-message"></h3>
-          <h3 class="game-message"></h3>
-            <form id='gameBoard'>
-            <div class='container-fluid'>
-              <div class='row board'>
 
+            <form id='gameBoard'>
+              <div class='container-fluid'>
+                <div class='row board'>
                     <div data-cell-index='0' class="col-4 box">$</div>
                     <div data-cell-index='1' class="col-4 box">$</div>
                     <div data-cell-index='2' class="col-4 box">$</div>
@@ -48,13 +48,17 @@
                     <div data-cell-index='6' class="col-4 box">$</div>
                     <div data-cell-index='7' class="col-4 box">$</div>
                     <div data-cell-index='8' class="col-4 box">$</div>
+                </div>
               </div>
-            </div>
-          </form>
-          <form id ="change-password">
+            </form>
+          <form id="change-password">
               <input name="passwords[old]" type="password">
               <input name="passwords[new]" type="password">
               <input type='submit' value="change-password">
+          </form>
+
+          <form id="log-out">
+              <input type='submit' value="log-out">
           </form>
 
 
