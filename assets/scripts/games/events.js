@@ -6,9 +6,7 @@ const api = require('./api')
 const ui = require('./ui')
 
 let currentPlayer = 'x'
-
 let cell = ''
-
 let gameArray = ['', '', '', '', '', '', '', '', '']
 let gameOver = false
 
@@ -50,24 +48,31 @@ const onGameBtnClick = function (event) {
       gameOver = true
     } else if (gameArray[3] === currentPlayer && gameArray[4] === currentPlayer && gameArray[5] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      gameOver = true
     } else if (gameArray[6] === currentPlayer && gameArray[7] === currentPlayer && gameArray[8] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      gameOver = true
     } else if (gameArray[0] === currentPlayer && gameArray[3] === currentPlayer && gameArray[6] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      gameOver = true
     } else if (gameArray[1] === currentPlayer && gameArray[4] === currentPlayer && gameArray[7] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      gameOver = true
     } else if (gameArray[2] === currentPlayer && gameArray[5] === currentPlayer && gameArray[8] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      gameOver = true
     } else if (gameArray[0] === currentPlayer && gameArray[4] === currentPlayer && gameArray[8] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      gameOver = true
     } else if (gameArray[2] === currentPlayer && gameArray[4] === currentPlayer && gameArray[6] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      gameOver = true
     } else {
       checkGameStatus(gameArray, currentPlayer)
     }
 
     api.gameBtnClick(getForm)
-      .then(ui.onGameBtnClickSuccess)
+      .then(gameOver = false, ui.onGameBtnClickSuccess)
       .catch(ui.onGameBtnClickFailure)
   }
 }
@@ -77,9 +82,9 @@ const checkGameStatus = function (array, player) {
   const gameBoardArray = array
   for (let i = 0; i < array.length; i++) {
     if (gameBoardArray.includes('')) {
-      $('.user-message').text(`${activePlayer}'s Turn!'`)
+      $('.game-message').text(`${activePlayer}'s Turn!'`)
     } else {
-      $('.user-message').text('Draw !!!')
+      $('.game-message').text('Draw !!!')
     }
   }
 }

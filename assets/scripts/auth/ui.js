@@ -50,6 +50,8 @@ const onLogOutSuccess = function (response) {
   $('#sign-up').show()
   $('#new-game').hide()
   $('#log-out').hide()
+  $('#gameBoard').hide()
+  $('.game-message').text('')
 }
 
 const onLogOutFailure = function (response) {

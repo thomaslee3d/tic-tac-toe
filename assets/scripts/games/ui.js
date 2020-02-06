@@ -5,11 +5,12 @@ const store = require('./../store')
 $('#gameBoard').hide()
 
 const onCreateGameSuccess = function (response) {
-  $('.user-message').text('New Game!')
-  store.game = response.game
-  $('#game-number').text('game-number ' + store.game.id)
+  $('.game-message').text('New Game!')
   $('#gameBoard').show()
   $('.col-4').text('$')
+  $('#gameBoard').trigger('reset')
+  $('#game-number').text('game-number ' + response.game.id)
+  store.game = response.game
 }
 
 const onRefreshGameSuccess = function (user) {
