@@ -112,6 +112,13 @@ const switchPlayer = function (player) {
 //     .catch(ui.onRefreshGameFailure)
 // }
 
+const onWinEvent = function () {
+  $('.game-message').text('New Game!')
+  $('#gameBoard').show()
+  $('.col-4').text('$')
+  $('#gameBoard').trigger('reset')
+}
+
 module.exports = {
   onCreateGame,
   onGameBtnClick
