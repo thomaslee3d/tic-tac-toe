@@ -23,7 +23,7 @@ const onSignInSuccess = function (response) {
   $('#log-out').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
-  $('#new-game').show()
+  $('#game-control').show()
 }
 
 const onSignInFailure = function (response) {

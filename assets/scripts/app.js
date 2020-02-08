@@ -10,13 +10,11 @@ const gameEvents = require('./games/events')
 
 $(() => {
   $('#change-password').hide()
-  $('#game-ctrl').hide()
-  $('#log-out').hide()
-  $('#new-game').hide()
+  $('#game-control').hide()
   $('#sign-up').on('submit', gameAuth.onSignUp)
   $('#sign-in').on('submit', gameAuth.onSignIn)
   $('#change-password').on('submit', gameAuth.onChangePassword)
-  $('#new-game').on('submit', gameEvents.onCreateGame)
+  $('#game-control').on('submit', gameEvents.onCreateGame)
   $('.box').on('click', gameEvents.onGameBtnClick)
   $('#log-out').on('submit', gameAuth.onLogOut)
   // $('.gameboard').on('click', (event) => {
