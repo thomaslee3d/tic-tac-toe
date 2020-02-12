@@ -10,14 +10,23 @@ const gameEvents = require('./games/events')
 
 $(() => {
   $('#change-password').hide()
-  $('#game-control').hide()
+  $('.user-message').text('tic tac toe')
+  $('.game-message').text('game message')
+  $('.game-message').hide()
+  $('#change-password').hide()
+  $('#new-game').hide()
+  $("#settings").hide()
+  $("#log-out").hide()
+  $("#gameBoard").show()
   $('#sign-up').on('submit', gameAuth.onSignUp)
   $('#sign-in').on('submit', gameAuth.onSignIn)
-  $('#change-password').on('submit', gameAuth.onChangePassword)
-  $('#game-control').on('submit', gameEvents.onCreateGame)
-  $('.box').on('click', gameEvents.onGameBtnClick)
-  $('#log-out').on('submit', gameAuth.onLogOut)
+
   // $('.gameboard').on('click', (event) => {
   //   $(event.target).text('x')
   // })
 })
+
+// $('#change-password').on('submit', gameAuth.onChangePassword)
+// $('#game-control').on('submit', gameEvents.onCreateGame)
+// $('.box').on('click', gameEvents.onGameBtnClick)
+// $('#log-out').on('submit', gameAuth.onLogOut)

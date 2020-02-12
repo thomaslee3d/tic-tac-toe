@@ -4,7 +4,9 @@
       <title>Example</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
+      <link href="https://fonts.googleapis.com/css?family=Gruppo|Orbitron|Turret+Road&display=swap" rel="stylesheet">
       <!-- Do not add `link` tags-->
+      
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
       <!-- Do not add `script` tags-->
@@ -13,7 +15,70 @@
     </head>
     <body>
 
-        <div class='row'>
+      <header>
+
+       <div class="user-message"></div>
+
+       <form class="sign-up">
+        <input name="credentials[email]" type="text" placeholder="email">
+        <input name="credentials[password]" type="password" placeholder="password">
+        <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+        <input id="sign-up" type='submit'value='sign up'>
+      </form>
+
+      <form id="change-password">
+        <input name="passwords[old]" type="password" placeholder="old password">
+        <input name="passwords[new]" type="password" placeholder="new password">
+       <input type='submit' value="change-password">
+      </form>
+
+    </header>
+
+    <section id="gameBoard">
+      <div id="game-number">
+        <h3 id="game-number"></h3>
+      </div>
+       <div class='row board'>
+         <div data-cell-index='0' class="col-4 box">[]</div>
+         <div data-cell-index='1' class="col-4 box">[]</div>
+         <div data-cell-index='2' class="col-4 box">[]</div>
+         <div data-cell-index='3' class="col-4 box">[]</div>
+         <div data-cell-index='4' class="col-4 box">[]</div>
+         <div data-cell-index='5' class="col-4 box">[]</div>
+         <div data-cell-index='6' class="col-4 box">[]</div>
+         <div data-cell-index='7' class="col-4 box">[]</div>
+         <div data-cell-index='8' class="col-4 box">[]</div> 
+        </div>
+      </section>
+
+    <footer>
+      <h3 class="game-message">game message</h3>
+
+      <form id="sign-in">
+        <input name="credentials[email]" type="text" placeholder="email">
+        <input name="credentials[password]" type="password" placeholder="password">
+        <input type='submit'value='log in'>
+      </form>
+
+      <form id="log-out">
+        <input type='submit' value="log-out">
+      </form>
+
+      <form id="new-game">
+          <input #type='submit' value="new game">
+      </form>
+
+      <form id = "settings" >
+        <input type='submit' value="settings">
+      </form>
+
+    </footer>
+</html>
+
+
+
+
+      <!-- <div class='row'>
           <div class='col-3'>
             <h3 class="user-message"></h3>
 
@@ -50,7 +115,7 @@
                     <div data-cell-index='5' class="col-4 box">$</div>
                     <div data-cell-index='6' class="col-4 box">$</div>
                     <div data-cell-index='7' class="col-4 box">$</div>
-                    <div data-cell-index='8' class="col-4 box">$</div>
+                    <div data-cell-index='8' class="col-4 box">$</div> -
                 </div>
               </div>
             </form>
@@ -62,16 +127,9 @@
               <input type='submit' value="change-password">
           </form>
 
-
-
-
-
             <br />
           <!-- </div>
           <div class="col-3"> -->
 
-          </div>
-       </div>
-
-  </body>
-</html>
+          <!-- </div>
+       </div> --> 

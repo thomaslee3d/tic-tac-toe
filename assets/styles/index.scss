@@ -1,36 +1,70 @@
 @import '~bootstrap/scss/bootstrap';
 
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  min-height: 100vh;
-  display: grid;
+  font-family: 'Orbitron', sans-serif;
+  // font-family: 'Gruppo', cursive;
+  // font-family: 'Turret Road', cursive;
 }
- .box {
-     width: 60px;
-     height: 30px;
-     background: silver;
-     border-radius: 5px;
-     padding: 1px 3px;
-     margin: 0 auto;
-     box-shadow: 1px 1px 1px #000;
-     display: block;
-     text-align: center;
-     background-image: linear-gradient(to bottom, #f4f5f5, #dfdddd);
-     font-family: arial;
-     font-size: 12px;
-     line-height:30px;
-}
-.box:nth-child(3n) {
-  border-right: 0px;
-}
-.box:nth-last-child(-1n + 3) {
-  border-bottom: 0px;
-}
-.board {
-  margin: 0px auto;
-  max-height: calc(100vh - 50px);
-  max-width: calc(100vh - 50px);
-  // min-height: calc(50vh);
-  // min-width: calc(50vh);
+header{
+  
+  height: 20vh;
   background-size: cover;
   background-position: center;
+  background-position: top;
 }
+#gameBoard{
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../../images/hexagon_bg.jpg);
+}
+
+#game-number{
+  font-size: 20px;
+
+}
+.user-message{
+  
+  font-size: 75px;
+  color: rgb(0, 197, 231)
+}
+#sign-up {
+  font-size: 24px;
+  background-color: rgb(0, 197, 231);
+}
+//  .box {
+//      width: 60px;
+//      height: 30px;
+//      background: silver;
+//      border-radius: 5px;
+//      padding: 1px 3px;
+//      margin: 0 auto;
+//      box-shadow: 1px 1px 1px #000;
+//      display: block;
+//      text-align: center;
+//      background-image: linear-gradient(to bottom, #f4f5f5, #dfdddd);
+//      font-family: arial;
+//      font-size: 12px;
+//      line-height:30px;
+// }
+// .box:nth-child(3n) {
+//   border-right: 0px;
+// }
+// .box:nth-last-child(-1n + 3) {
+//   border-bottom: 0px;
+// }
+// .board {
+//   margin: 0px auto;
+//   max-height: calc(100vh - 50px);
+//   max-width: calc(100vh - 50px);
+//   // min-height: calc(50vh);
+//   // min-width: calc(50vh);
+//   background-size: cover;
+//   background-position: center;
+// }
