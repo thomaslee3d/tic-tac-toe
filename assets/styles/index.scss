@@ -12,15 +12,44 @@ body {
   // font-family: 'Turret Road', cursive;
 }
 header{
-  
-  height: 20vh;
-  background-size: cover;
-  background-position: center;
-  background-position: top;
+  justify-content: center;
+  // height: 20vh;
+  // background-size: cover;
+  // // background-position: top;
 }
-#gameBoard{
-  height: 50vh;
+.header-container{
+  display: block
+}
+.title-message-container{
+  padding: 40px;
+  display: block;
+  height: 10vh;
+  width: 100%;
+  
+  
+}
+.sign-up-text-container{
+  display: block;
+}
+.user-message{
+  display: block;
+  font-size: 75px;
+  color: rgb(0, 197, 231);
+  justify-content: center;
+}
+.passsw-text-box{
+  display: block;
+}
+.sign-up-btn-row{
+  display: flex;
+}
+#gameBoard {
+  padding: 20px;
+  margin: 0 auto;
   background-size: cover;
+  height: 65vh;
+  background-repeat: no-repeat;
+  width: 100%;
   background-position: center;
   background-image: url(../../images/hexagon_bg.jpg);
 }
@@ -29,42 +58,50 @@ header{
   font-size: 20px;
 
 }
-.user-message{
+// .user-message{
   
-  font-size: 75px;
-  color: rgb(0, 197, 231)
-}
-#sign-up {
+//   font-size: 75px;
+//   color: rgb(0, 197, 231)
+// }
+.btn {
   font-size: 24px;
   background-color: rgb(0, 197, 231);
+  box-shadow: 1px 1px 1px #000;
 }
-//  .box {
-//      width: 60px;
-//      height: 30px;
-//      background: silver;
-//      border-radius: 5px;
-//      padding: 1px 3px;
-//      margin: 0 auto;
-//      box-shadow: 1px 1px 1px #000;
-//      display: block;
-//      text-align: center;
-//      background-image: linear-gradient(to bottom, #f4f5f5, #dfdddd);
-//      font-family: arial;
-//      font-size: 12px;
-//      line-height:30px;
-// }
-// .box:nth-child(3n) {
-//   border-right: 0px;
-// }
-// .box:nth-last-child(-1n + 3) {
-//   border-bottom: 0px;
-// }
-// .board {
-//   margin: 0px auto;
-//   max-height: calc(100vh - 50px);
-//   max-width: calc(100vh - 50px);
-//   // min-height: calc(50vh);
-//   // min-width: calc(50vh);
-//   background-size: cover;
-//   background-position: center;
-// }
+.btn:hover{
+  background-color: rgb(236, 5, 167);
+  box-shadow: 1px 1px 1px #000;
+}
+
+
+ .box {
+     width: 20vh;
+     height: 15vh;
+     background: rgba(10, 230, 230, .3);
+     border-radius: 5px;
+     padding: 1px 3px;
+     margin: 0 auto;
+     box-shadow: 1px 1px 1px #000;
+     display: block;
+     text-align: center;
+     font-family: arial;
+     font-size: 60px;
+     line-height:30px;
+}
+.box:hover{
+  background:rgba(255, 0, 200, 0.3);
+}
+.box:nth-child(3n) {
+  border-right: 0px;
+}
+.box:nth-last-child(-1n + 3) {
+  border-bottom: 0px;
+}
+.board {
+  margin: 0px auto;
+  max-height: calc(100vh - 50px);
+  max-width: calc(100vh - 50px);
+  // min-height: calc(50vh);
+  // min-width: calc(50vh);
+ 
+}

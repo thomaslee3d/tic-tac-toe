@@ -27,8 +27,8 @@ const onGameBtnClick = function (event) {
   event.preventDefault()
   const form = event.target
   const getForm = getFormFields(form)
-
-  if ($(event.target).text() === '$' && gameOver === false) {
+  console.log('click')
+  if ($(event.target).text() === '' && gameOver === false) {
     $(event.target).text(currentPlayer)
     if (currentPlayer === 'x') {
       store.currentPlayer = 'x'
@@ -115,7 +115,7 @@ const switchPlayer = function (player) {
 const onWinEvent = function () {
   $('.game-message').text('New Game!')
   $('#gameBoard').show()
-  $('.col-4').text('$')
+  $('.col-4').text('')
   $('#gameBoard').trigger('reset')
 }
 
