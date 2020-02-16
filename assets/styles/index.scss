@@ -7,30 +7,67 @@
   box-sizing: border-box;
 }
 body {
+  display: block;
   font-family: 'Orbitron', sans-serif;
   // font-family: 'Gruppo', cursive;
   // font-family: 'Turret Road', cursive;
 }
-header{
-  justify-content: center;
-  // height: 20vh;
+header {
+
+  height: 30vh;
   // background-size: cover;
   // // background-position: top;
+}
+.page-title{
+  text-align: center;
+  color: rgb(0, 197, 231);
+  font-size: 36px;
+  justify-content: center;
 }
 .header-container{
   display: block
 }
-.title-message-container{
-  padding: 40px;
+footer{
+  display: flexbox;
+}
+.title-container{
+
   display: block;
-  height: 10vh;
+  height: 30vh;
   width: 100%;
   
   
 }
-.sign-up-text-container{
-  display: block;
+.sign-up-btn-container{
+
+ text-align: center;
+
 }
+.sign-up-text-container {
+  text-align: center;
+}
+.sign-up {
+  flex: 2;
+  display: inline-block;
+}
+.sign-in-container{
+  text-align: center;
+}
+.sign-in{
+  display: inline-block;
+}
+.user-ui-btn-container{
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+}
+#log-out{
+  display: inline-flexbox;
+}
+#new-game{
+display: inline-flexbox;
+}
+
 .user-message{
   display: block;
   font-size: 75px;
@@ -43,7 +80,7 @@ header{
 .sign-up-btn-row{
   display: flex;
 }
-#gameBoard {
+.gameBoard-container{
   padding: 20px;
   margin: 0 auto;
   background-size: cover;
@@ -67,6 +104,7 @@ header{
   font-size: 24px;
   background-color: rgb(0, 197, 231);
   box-shadow: 1px 1px 1px #000;
+  margin: 5px;
 }
 .btn:hover{
   background-color: rgb(236, 5, 167);

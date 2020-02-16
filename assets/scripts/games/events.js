@@ -15,7 +15,7 @@ const onCreateGame = function (event) {
   currentPlayer = 'x'
   cell = ''
   gameArray = ['', '', '', '', '', '', '', '', '']
-  $('.game-message').text('')
+  $('.game-message').text(currentPlayer + ' goes first')
   const form = event.target
   const getForm = getFormFields(form)
   api.createGame(getForm)
@@ -69,6 +69,10 @@ const onGameBtnClick = function (event) {
       gameOver = true
     } else {
       checkGameStatus(gameArray, currentPlayer)
+    }
+
+    if(gameOver === true){
+      $('#gameBoard').hide()
     }
 
     api.gameBtnClick(getForm)
