@@ -25,12 +25,5 @@ $(() => {
   $('#new-game').on('submit', gameEvents.onCreateGame)
   $('#change-password').on('submit', gameAuth.onChangePassword)
   $('#log-out').on('submit', gameAuth.onLogOut)
-  // $('.gameboard').on('click', (event) => {
-  //   $(event.target).text('x')
-  // })
-})
 
-// $('#change-password').on('submit', gameAuth.onChangePassword)
-// $('#game-control').on('submit', gameEvents.onCreateGame)
-// $('.box').on('click', gameEvents.onGameBtnClick)
-// $('#log-out').on('submit', gameAuth.onLogOut)
+
