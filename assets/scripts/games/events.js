@@ -10,12 +10,15 @@ let cell = ''
 let gameArray = ['', '', '', '', '', '', '', '', '']
 let gameOver = false
 
+
 const onCreateGame = function (event) {
+  
   event.preventDefault()
   currentPlayer = 'x'
   cell = ''
   gameArray = ['', '', '', '', '', '', '', '', '']
   $('.game-message').text(currentPlayer + ' goes first')
+
   const form = event.target
   const getForm = getFormFields(form)
   api.createGame(getForm)
@@ -24,6 +27,7 @@ const onCreateGame = function (event) {
 }
 
 const onGameBtnClick = function (event) {
+  console.log(userGames)
   event.preventDefault()
   const form = event.target
   const getForm = getFormFields(form)
@@ -93,6 +97,7 @@ const checkGameStatus = function (array, player) {
   }
 }
 
+
 const switchPlayer = function (player) {
   if (player === 'x') {
     store.currentPlayer = 'x'
@@ -104,17 +109,6 @@ const switchPlayer = function (player) {
   return player
 }
 
-// const onRefreshGame = function (event) {
-//   event.preventDefault()
-//   currentPlayer = 'x'
-//   cell = ''
-//   gameArray = ['', '', '', '', '', '', '', '', '']
-//   const form = event.target
-//   const getForm = getFormFields(form)
-//   api.gameBtnClick(getForm)
-//     .then(ui.onRefreshGameSuccess)
-//     .catch(ui.onRefreshGameFailure)
-// }
 
 const onWinEvent = function () {
   $('.game-message').text('New Game!')

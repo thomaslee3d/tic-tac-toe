@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('./../store')
+const api = ('./api')
 
 
 
@@ -9,9 +10,12 @@ const onCreateGameSuccess = function (response) {
   $('.user-message').text('New Game!')
   $('#gameBoard').trigger('reset')
   $('.col-4').text('')
-  $('#game-number').text('game-number ' + api.userStats(getForm))
   store.game = response.game
-  api.createGame(getForm)
+  store.data = response.data
+  console.log(store.game.count)
+  $('#game-number').show()
+  console.log(store.game.id - (store.game.count))
+  $('#game-number').text('game number is ' + response.data.games)
 }
 
 const onRefreshGameSuccess = function (user) {
