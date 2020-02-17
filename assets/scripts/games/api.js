@@ -24,7 +24,6 @@ const gameBtnClick = function (data) {
 
   console.log('sending ajax cell ' + cell)
   console.log('sending ajax value ' + value)
-  console.log(data)
   console.log('this is my store api.js ', store.game)
 
   // for(let i = 0; i < gameBoardArray.length; i++){
@@ -37,7 +36,15 @@ const gameBtnClick = function (data) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: data
+    data: {
+      game: {
+        cell: {
+          index: cell,
+          value: value
+        },
+        over: false
+      }
+    }
   })
 }
 
@@ -45,7 +52,7 @@ const userStats = function (data) {
   console.log(data)
   console.log('createGame games/api.js')
   return $.ajax({
-    url: config.apiUrl + '/games[?over=]',
+    url: config.apiUrl + '/games',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token

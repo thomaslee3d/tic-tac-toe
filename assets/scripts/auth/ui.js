@@ -11,6 +11,7 @@ const onSignUpSuccess = function (response) {
 
 const onSignUpFailure = function (response) {
   $('#sign-up').trigger('reset')
+  $('.user-message').show()
   $('.user-message').text('Failed Sign Up Attempt!')
 }
 
@@ -32,6 +33,7 @@ const onSignInSuccess = function (response) {
 }
 
 const onSignInFailure = function (response) {
+  $('.user-message').show()
   $('.user-message').text('Failed Sign In Attempt!')
   $('#sign-in').trigger('reset')
 }

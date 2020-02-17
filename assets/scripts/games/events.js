@@ -4,7 +4,6 @@ const store = require('./../store')
 const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-
 let currentPlayer = 'x'
 let cell = ''
 let gameArray = ['', '', '', '', '', '', '', '', '']
@@ -18,7 +17,8 @@ const onCreateGame = function (event) {
   cell = ''
   gameArray = ['', '', '', '', '', '', '', '', '']
   $('.game-message').text(currentPlayer + ' goes first')
-
+  $('#game-number').show()
+  
   const form = event.target
   const getForm = getFormFields(form)
   api.createGame(getForm)
@@ -27,7 +27,7 @@ const onCreateGame = function (event) {
 }
 
 const onGameBtnClick = function (event) {
-  console.log(userGames)
+
   event.preventDefault()
   const form = event.target
   const getForm = getFormFields(form)

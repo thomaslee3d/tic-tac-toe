@@ -11,11 +11,10 @@ const onCreateGameSuccess = function (response) {
   $('#gameBoard').trigger('reset')
   $('.col-4').text('')
   store.game = response.game
-  store.data = response.data
-  console.log(store.game.count)
+  count = response.data.game.count
   $('#game-number').show()
-  console.log(store.game.id - (store.game.count))
-  $('#game-number').text('game number is ' + response.data.games)
+
+  $('#game-number').text('game number is ' + count )
 }
 
 const onRefreshGameSuccess = function (user) {
