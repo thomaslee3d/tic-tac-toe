@@ -12,7 +12,7 @@ const onCreateGameSuccess = function (response) {
   $('.col-4').text('')
   store.game = response.game
   $('#game-number').show()
-  $('#game-number').text(store.id)
+  $('#game-number').text("Game Number " + response.game.id)
 }
 
 const onRefreshGameSuccess = function (user) {
@@ -21,20 +21,12 @@ const onRefreshGameSuccess = function (user) {
   $('.col-4').text('')
 }
 
-const onRefreshGameFailure = function () {
-
-}
-
-const onCreateGameFailure = function () {
-
-}
-
 const onGameBtnClickSuccess = function (response) {
   store.game = response.game
 }
 
 const onGameBtnClickFailure = function () {
-  
+  $('.user-message').text('failed to click')
 }
 
 module.exports = {
