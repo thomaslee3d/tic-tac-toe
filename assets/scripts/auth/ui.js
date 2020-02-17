@@ -9,7 +9,7 @@ const onSignUpSuccess = function (response) {
   $('#sign-up-form').trigger('reset')
 }
 
-const onSignUpFailure = function (response) {
+const onSignUpFailure = function () {
   $('#sign-up').trigger('reset')
   $('.user-message').show()
   $('.user-message').text('Failed Sign Up Attempt!')
@@ -17,12 +17,15 @@ const onSignUpFailure = function (response) {
 
 const onSignInSuccess = function (response) {
   store.user = response.user
+
   $('#game-user').show()
   $('.game-user').text(' Active User : ' + response.user.email)
   $('#sign-in').trigger('reset')
   $('#sign-up').trigger('reset')
+  $('.user-message').show()
   $('.user-message').text('Log In Success!')
-  $('#game-number').text('game-num')
+
+  $('#game-number').text('game-num ' + response.user)
   $('.game-message').show()
   $('.game-message').text("Click New Game to Start")
   $('#new-game').show()
@@ -32,22 +35,24 @@ const onSignInSuccess = function (response) {
   $('#change-password').show()
 }
 
-const onSignInFailure = function (response) {
+const onSignInFailure = function () {
   $('.user-message').show()
   $('.user-message').text('Failed Sign In Attempt!')
   $('#sign-in').trigger('reset')
 }
 
-const onChangePasswordSuccess = function (response) {
+const onChangePasswordSuccess = function () {
   $('.user-message').text(`Active user : Has Updated Password`)
   $('#change-password').trigger('reset')
 }
-const onChangePasswordFailure = function (response) {
+const onChangePasswordFailure = function () {
   $('.user-message').text(`Active user : Failed Password Update!`)
   $('#change-password').trigger('reset')
 }
 
-const onLogOutSuccess = function (response) {
+const onLogOutSuccess = function () {
+  $('#game-user').hide()
+  $('.user-message').show()
   $('.user-message').text('Logged Out')
   $('#sign-in').trigger('reset')
   $('#sign-up').trigger('reset')
@@ -61,7 +66,7 @@ const onLogOutSuccess = function (response) {
   $('.game-message').text('')
 }
 
-const onLogOutFailure = function (response) {
+const onLogOutFailure = function () {
   $('.user-message').text('Failed to log out')
 }
 

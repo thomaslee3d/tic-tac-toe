@@ -17,8 +17,6 @@ const onCreateGame = function (event) {
   cell = ''
   gameArray = ['', '', '', '', '', '', '', '', '']
   $('.game-message').text(currentPlayer + ' goes first')
-  $('#game-number').show()
-  
   const form = event.target
   const getForm = getFormFields(form)
   api.createGame(getForm)
@@ -27,11 +25,11 @@ const onCreateGame = function (event) {
 }
 
 const onGameBtnClick = function (event) {
-
+  $('.user-message').hide()
   event.preventDefault()
   const form = event.target
   const getForm = getFormFields(form)
-  console.log('click')
+
   if ($(event.target).text() === '' && gameOver === false) {
     $(event.target).text(currentPlayer)
     if (currentPlayer === 'x') {
@@ -49,27 +47,43 @@ const onGameBtnClick = function (event) {
 
     if (gameArray[0] === currentPlayer && gameArray[1] === currentPlayer && gameArray[2] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      $('.user-message').show()
+      $('.user-message').text(currentPlayer + ' Wins!!')
       gameOver = true
     } else if (gameArray[3] === currentPlayer && gameArray[4] === currentPlayer && gameArray[5] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      $('.user-message').show()
+      $('.user-message').text(currentPlayer + ' Wins!!')
       gameOver = true
     } else if (gameArray[6] === currentPlayer && gameArray[7] === currentPlayer && gameArray[8] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      $('.user-message').show()
+      $('.user-message').text(currentPlayer + ' Wins!!')
       gameOver = true
     } else if (gameArray[0] === currentPlayer && gameArray[3] === currentPlayer && gameArray[6] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      $('.user-message').show()
+      $('.user-message').text(currentPlayer + ' Wins!!')
       gameOver = true
     } else if (gameArray[1] === currentPlayer && gameArray[4] === currentPlayer && gameArray[7] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      $('.user-message').show()
+      $('.user-message').text(currentPlayer + ' Wins!!')
       gameOver = true
     } else if (gameArray[2] === currentPlayer && gameArray[5] === currentPlayer && gameArray[8] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      $('.user-message').show()
+      $('.user-message').text(currentPlayer + ' Wins!!')
       gameOver = true
     } else if (gameArray[0] === currentPlayer && gameArray[4] === currentPlayer && gameArray[8] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      $('.user-message').show()
+      $('.user-message').text(currentPlayer + ' Wins!!')
       gameOver = true
     } else if (gameArray[2] === currentPlayer && gameArray[4] === currentPlayer && gameArray[6] === currentPlayer) {
       $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
+      $('.user-message').show()
+      $('.user-message').text(currentPlayer + ' Wins!!')
       gameOver = true
     } else {
       checkGameStatus(gameArray, currentPlayer)
@@ -77,6 +91,9 @@ const onGameBtnClick = function (event) {
 
     if(gameOver === true){
       $('#gameBoard').hide()
+      $('#game-number').hide()
+      $('.user-message').show()
+      $('.user-message').text('Play Again?')
     }
 
     api.gameBtnClick(getForm)
@@ -108,8 +125,6 @@ const switchPlayer = function (player) {
   }
   return player
 }
-
-
 const onWinEvent = function () {
   $('.game-message').text('New Game!')
   $('#gameBoard').show()
@@ -119,5 +134,6 @@ const onWinEvent = function () {
 
 module.exports = {
   onCreateGame,
-  onGameBtnClick
+  onGameBtnClick,
+
 }

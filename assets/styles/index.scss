@@ -67,10 +67,15 @@ footer{
 #new-game{
 display: inline-flexbox;
 }
-
+.game-message{
+  display: block;
+  font-size: 35px;
+  color: rgb(0, 197, 231);
+  justify-content: center;
+}
 .user-message{
   display: block;
-  font-size: 75px;
+  font-size: 35px;
   color: rgb(0, 197, 231);
   justify-content: center;
 }

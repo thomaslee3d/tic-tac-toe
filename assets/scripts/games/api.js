@@ -4,8 +4,7 @@ const config = require('./../config')
 const store = require('./../store')
 
 const createGame = function (data) {
-  console.log(data)
-  console.log('createGame games/api.js')
+
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -21,14 +20,6 @@ const createGame = function (data) {
 const gameBtnClick = function (data) {
   const cell = store.cell
   const value = store.currentPlayer
-
-  console.log('sending ajax cell ' + cell)
-  console.log('sending ajax value ' + value)
-  console.log('this is my store api.js ', store.game)
-
-  // for(let i = 0; i < gameBoardArray.length; i++){
-  //   if(i === )
-  // }
 
   return $.ajax({
     url: config.apiUrl + `/games/${store.game.id}`,
@@ -49,8 +40,7 @@ const gameBtnClick = function (data) {
 }
 
 const userStats = function (data) {
-  console.log(data)
-  console.log('createGame games/api.js')
+
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',

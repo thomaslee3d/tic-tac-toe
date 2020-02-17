@@ -11,10 +11,8 @@ const onCreateGameSuccess = function (response) {
   $('#gameBoard').trigger('reset')
   $('.col-4').text('')
   store.game = response.game
-  count = response.data.game.count
   $('#game-number').show()
-
-  $('#game-number').text('game number is ' + count )
+  $('#game-number').text(store.id)
 }
 
 const onRefreshGameSuccess = function (user) {
@@ -36,7 +34,7 @@ const onGameBtnClickSuccess = function (response) {
 }
 
 const onGameBtnClickFailure = function () {
-
+  
 }
 
 module.exports = {

@@ -24,6 +24,7 @@ $(() => {
   $('.box').on('click', gameEvents.onGameBtnClick)
   $('#new-game').on('submit', gameEvents.onCreateGame)
   $('#change-password').on('submit', gameAuth.onChangePassword)
+  $('#log-out').on('submit', gameAuth.onLogOut)
   // $('.gameboard').on('click', (event) => {
   //   $(event.target).text('x')
   // })
