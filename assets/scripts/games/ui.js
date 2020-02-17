@@ -21,20 +21,19 @@ const onRefreshGameSuccess = function (user) {
   $('.col-4').text('')
 }
 
+
 const onGameBtnClickSuccess = function (response) {
   store.game = response.game
 }
 
 const onGameBtnClickFailure = function () {
-  $('.user-message').text('failed to click')
+  $('.user-message').text('failed to')
 }
 
 module.exports = {
   onCreateGameSuccess,
-  onCreateGameFailure,
   onGameBtnClickSuccess,
   onGameBtnClickFailure,
-  onRefreshGameSuccess,
-  onRefreshGameFailure
+  onRefreshGameSuccess
 
 }

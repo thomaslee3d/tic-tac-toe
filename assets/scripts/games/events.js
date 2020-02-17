@@ -135,5 +135,5 @@ const onWinEvent = function () {
 module.exports = {
   onCreateGame,
   onGameBtnClick,
-
+  onCreateGame,
 }
