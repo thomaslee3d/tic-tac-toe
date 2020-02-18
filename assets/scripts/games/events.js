@@ -88,7 +88,7 @@ const onGameBtnClick = function (event) {
       checkGameStatus(gameArray, currentPlayer, gameOver)
     }
 
-    if(gameOver === true){
+    if (gameOver === true){
       $('#gameBoard').hide()
       $('#game-number').hide()
       $('.user-message').show()
@@ -100,28 +100,6 @@ const onGameBtnClick = function (event) {
       .catch(ui.onGameBtnClickFailure)
   }
 }
-const gameLogic = function(gatForm){
-  if (gameArray[0] === currentPlayer && gameArray[1] === currentPlayer && gameArray[2] === currentPlayer) {
-    $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-  } else if (gameArray[3] === currentPlayer && gameArray[4] === currentPlayer && gameArray[5] === currentPlayer) {
-    $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-  } else if (gameArray[6] === currentPlayer && gameArray[7] === currentPlayer && gameArray[8] === currentPlayer) {
-    $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-  } else if (gameArray[0] === currentPlayer && gameArray[3] === currentPlayer && gameArray[6] === currentPlayer) {
-    $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-  } else if (gameArray[1] === currentPlayer && gameArray[4] === currentPlayer && gameArray[7] === currentPlayer) {
-    $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-  } else if (gameArray[2] === currentPlayer && gameArray[5] === currentPlayer && gameArray[8] === currentPlayer) {
-    $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-  } else if (gameArray[0] === currentPlayer && gameArray[4] === currentPlayer && gameArray[8] === currentPlayer) {
-    $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-  } else if (gameArray[2] === currentPlayer && gameArray[4] === currentPlayer && gameArray[6] === currentPlayer) {
-    $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-  } else {
-    checkGameStatus(gameArray, currentPlayer, gameOver)
-  }
-}
-
 
 const checkGameStatus = function (array, player) {
   const activePlayer = player
@@ -134,7 +112,6 @@ const checkGameStatus = function (array, player) {
     } else {
       $('.game-message').text('Draw !!!')
     }
-
   }
 }
 
