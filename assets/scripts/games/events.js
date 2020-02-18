@@ -102,6 +102,7 @@ const onGameBtnClick = function (event) {
   }
 }
 
+
 const checkGameStatus = function (array, player) {
   const activePlayer = player
   const gameBoardArray = array
@@ -114,6 +115,14 @@ const checkGameStatus = function (array, player) {
   }
 }
 
+const gameNumber = function (response){
+const count = response.data.games.length
+
+  api.userStats(count)
+  .then(ui.updateGameNumber)
+  .catch(ui.updateGameNumberFail)
+
+}
 
 const switchPlayer = function (player) {
   if (player === 'x') {
@@ -136,4 +145,5 @@ module.exports = {
   onCreateGame,
   onGameBtnClick,
   onCreateGame,
+  gameNumber
 }

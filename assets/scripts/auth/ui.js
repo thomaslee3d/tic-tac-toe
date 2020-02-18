@@ -7,6 +7,7 @@ const onSignUpSuccess = function (response) {
   $('.user-message').show()
   $('.user-message').text(response.user.email + ' Signed Up!')
   $('#sign-up-form').trigger('reset')
+  $('#sign-up').trigger('reset')
 }
 
 const onSignUpFailure = function () {
@@ -64,6 +65,7 @@ const onLogOutSuccess = function () {
   $('#log-out').hide()
   $('#gameBoard').hide()
   $('.game-message').text('')
+  $('#game-number').hide()
 }
 
 const onLogOutFailure = function () {

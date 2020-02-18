@@ -12,15 +12,20 @@ const onCreateGameSuccess = function (response) {
   $('.col-4').text('')
   store.game = response.game
   $('#game-number').show()
-  $('#game-number').text("Game Number " + response.game.id)
+  // $('#game-number').text("Game Number " + response.game.id)
 }
 
-const onRefreshGameSuccess = function (user) {
-  $('.user-message').text('New Game!')
-  store.game = user.game
-  $('.col-4').text('')
+// const onRefreshGameSuccess = function (user) {
+//   $('.user-message').text('New Game!')
+//   store.game = user.game
+//   $('.col-4').text('')
+// }
+const updateGameNumber = function (response){
+  $('#game-number').text("Game Number " + response.data.games.data.length)
 }
-
+const updateGameNumberFail = function (){
+  $('#game-number').text("Game Number ?")
+}
 
 const onGameBtnClickSuccess = function (response) {
   store.game = response.game
@@ -34,6 +39,8 @@ module.exports = {
   onCreateGameSuccess,
   onGameBtnClickSuccess,
   onGameBtnClickFailure,
-  onRefreshGameSuccess
+  updateGameNumber,
+  updateGameNumberFail
+
 
 }
