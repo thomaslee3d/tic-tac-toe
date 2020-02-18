@@ -1,29 +1,138 @@
 @import '~bootstrap/scss/bootstrap';
 
-body {
-  min-height: 100vh;
-  display: grid;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.container-fluid {
+body {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  // font-family: 'Gruppo', cursive;
+  // font-family: 'Turret Road', cursive;
+}
+header {
+
+  height: 30vh;
+  // background-size: cover;
+  // // background-position: top;
+}
+.page-title{
+  text-align: center;
+  color: rgb(0, 197, 231);
+  font-size: 36px;
+  justify-content: center;
+}
+.header-container{
+  display: block
+}
+footer{
+  display: flexbox;
+}
+.title-container{
+
+  display: block;
+  height: 30vh;
+  width: 100%;
+
 
 }
-.col-4{
-      background: url(assets/images/BG.jpg)
+.sign-up-btn-container{
+
+ text-align: center;
+
 }
+.sign-up-text-container {
+  text-align: center;
+}
+.sign-up {
+  flex: 2;
+  display: inline-block;
+}
+.sign-in-container{
+  text-align: center;
+}
+.sign-in{
+  display: inline-block;
+}
+.user-ui-btn-container{
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+}
+#log-out{
+  display: inline-flexbox;
+}
+#new-game{
+display: inline-flexbox;
+}
+.game-message{
+  display: block;
+  font-size: 35px;
+  color: rgb(0, 197, 231);
+  justify-content: center;
+}
+.user-message{
+  display: block;
+  font-size: 35px;
+  color: rgb(0, 197, 231);
+  justify-content: center;
+}
+.passsw-text-box{
+  display: block;
+}
+.sign-up-btn-row{
+  display: flex;
+}
+.gameBoard-container{
+  padding: 20px;
+  margin: 0 auto;
+  background-size: cover;
+  height: 65vh;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center;
+  background-image: url(../../images/hexagon_bg.jpg);
+}
+
+#game-number{
+  font-size: 20px;
+
+}
+// .user-message{
+
+//   font-size: 75px;
+//   color: rgb(0, 197, 231)
+// }
+.btn {
+  font-size: 24px;
+  background-color: rgb(0, 197, 231);
+  box-shadow: 1px 1px 1px #000;
+  margin: 5px;
+}
+.btn:hover{
+  background-color: rgb(236, 5, 167);
+  box-shadow: 1px 1px 1px #000;
+}
+
+
  .box {
-     width: 60px;
-     height: 30px;
-     background: silver;
+     width: 20vh;
+     height: 15vh;
+     background: rgba(10, 230, 230, .3);
      border-radius: 5px;
      padding: 1px 3px;
+     margin: 0 auto;
      box-shadow: 1px 1px 1px #000;
      display: block;
      text-align: center;
-     background-image: linear-gradient(to bottom, #f4f5f5, #dfdddd);
      font-family: arial;
-     font-size: 12px;
+     font-size: 60px;
      line-height:30px;
-     min-height: calc(100% / 3);
+}
+.box:hover{
+  background:rgba(255, 0, 200, 0.3);
 }
 .box:nth-child(3n) {
   border-right: 0px;
@@ -33,10 +142,11 @@ body {
 }
 .board {
   margin: 0px auto;
-  max-height: calc(100vh - 75px);
-  max-width: calc(100vh - 75px);
-  background-size: cover;
-  background-position: center;
+  max-height: calc(100vh - 50px);
+  max-width: calc(100vh - 50px);
+  // min-height: calc(50vh);
+  // min-width: calc(50vh);
+
 }
 .nav-button{
   background-color: url()

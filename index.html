@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>tic-tac-toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
+      <link href="https://fonts.googleapis.com/css?family=Gruppo|Orbitron|Turret+Road&display=swap" rel="stylesheet">
       <!-- Do not add `link` tags-->
+
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
       <!-- Do not add `script` tags-->
@@ -12,17 +14,102 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <div class='container-fluid'>
-        <div class='row'>
+
+      <header>
+            <div class='title-message-container'>
+              <div class="page-title">tic tac toe<le/div>
+            </div>
+<br />
+            <form id="sign-up">
+              <div class='sign-up-text-container'>
+                <input name="credentials[email]" type="text" placeholder="email">
+                <input name="credentials[password]" type="password" placeholder="password">
+                <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+              </div>
+              <div class="sign-up-btn-container">
+                <input class='btn' type='submit'value='sign up'>
+              </div>
+          </form>
+
+
+        </div>
+
+        <div class="user-message"></div>
+        <div id="game-user">
+          <h3 class="game-user"></h3>
+        </div>
+        <div id="game-number">
+          <h3 class="game-number"></h3>
+        </div>
+        <h3 class="game-message">game message</h3>
+    </header>
+
+
+    <div class="gameBoard-container">
+      <div id="gameBoard">
+        <div class='row board'>
+         <div data-cell-index='0' class="col-4 box btn"></div>
+         <div data-cell-index='1' class="col-4 box btn"></div>
+         <div data-cell-index='2' class="col-4 box btn"></div>
+        </div>
+        <div class='row board'>
+         <div data-cell-index='3' class="col-4 box btn"></div>
+         <div data-cell-index='4' class="col-4 box btn"></div>
+         <div data-cell-index='5' class="col-4 box btn"></div>
+        </div>
+        <div class='row board'>
+          <div data-cell-index='6' class="col-4 box btn"></div>
+          <div data-cell-index='7' class="col-4 box btn"></div>
+          <div data-cell-index='8' class="col-4 box btn"></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+
+
+      <div class="sign-in-container">
+        <form id="sign-in">
+          <input name="credentials[email]" type="text" placeholder="email">
+          <input name="credentials[password]" type="password" placeholder="password">
+          <div class="sign-in-btn-container">
+              <input type='submit' class='btn' value='log in'>
+          </div>
+        </form>
+      </div>
+
+    <div class="user-ui-btn-container">
+        <form id="new-game">
+          <input type='submit' class='btn' value="new game">
+      </form>
+        <form id="log-out">
+          <input type='submit' class='btn' value="log out">
+      </form>
+      <form id="change-password">
+        <div class="passw-text-box">
+          <input name="passwords[old]" type="password" placeholder="old password">
+          <input name="passwords[new]" type="password" placeholder="new password">
+          <input type='submit' class='btn' value="change-password">
+         </div>
+      </form>
+    </div>
+
+    </footer>
+</html>
+
+
+
+
+      <!-- <div class='row'>
           <div class='col-3'>
             <h3 class="user-message"></h3>
+
             <h3 class="game-message"></h3>
-            <div class="col-4 nav-button">
-              <div class='row'>
+            <div class='container-fluid'>
+              <div class="buttons">
                 <form id="sign-up">
                   <input name="credentials[email]" type="text" placeholder="an@example.email">
                   <input name="credentials[password]" type="password" placeholder="an example password">
-                  <input name="credentials[password_confirmation]" type="password" value="password">
+                  <input name="credentials[password_confirmation]" type="password" placeholder="password">
                   <input type='submit'value='sign up'>
                 </form>
                 <form id="sign-in">
@@ -30,16 +117,17 @@
                   <input name="credentials[password]" type="password" placeholder="password">
                   <input type='submit'value='sign in'>
                 </form>
+                <form id="log-out">
+                    <input type='submit' value="log-out">
+                </form>
                 <form id="new-game">
-                    <h4 id='game-number' value='Game Number'></h4>
                     <input type='submit' value="new game">
                 </form>
-
               </div>
             </div>
             <form id='gameBoard'>
-            <div class='container-fluid'>
-              <div class='row board'>
+              <div class='container-fluid'>
+                <div class='row board'>
                     <div data-cell-index='0' class="col-4 box">$</div>
                     <div data-cell-index='1' class="col-4 box">$</div>
                     <div data-cell-index='2' class="col-4 box">$</div>
@@ -48,19 +136,21 @@
                     <div data-cell-index='5' class="col-4 box">$</div>
                     <div data-cell-index='6' class="col-4 box">$</div>
                     <div data-cell-index='7' class="col-4 box">$</div>
-                    <div data-cell-index='8' class="col-4 box">$</div>
+                    <div data-cell-index='8' class="col-4 box">$</div> -
+                </div>
               </div>
-            </div>
-          </form>
-         </div>
-            <br />
-            <form id ="change-password">
-                <input name="passwords[old]" type="password">
-                <input name="passwords[new]" type="password">
-                <input type='submit' value="change-password">
             </form>
-          </div>
-       </div>
 
-  </body>
-</html>
+          <h4 id='game-number' value='Game Number'></h4>
+          <form id="change-password">
+              <input name="passwords[old]" type="password">
+              <input name="passwords[new]" type="password">
+              <input type='submit' value="change-password">
+          </form>
+
+            <br />
+          </div>
+          <div class="col-3"> -->
+
+          <!-- </div>
+       </div> -->

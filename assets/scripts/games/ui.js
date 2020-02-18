@@ -3,27 +3,25 @@
 const store = require('./../store')
 
 const onCreateGameSuccess = function (response) {
-  $('.user-message').text('New Game!')
-  store.game = response.game
-  $('#game-number').text('game-number ' + store.game.id)
   $('#gameBoard').show()
-  $('#new-game').show()
-  $('#change-password').show()
-
-}
-
-const onRefreshGameSuccess = function (user) {
   $('.user-message').text('New Game!')
-  $('#game-number').text('game-number ' + store.game.id)
-  store.game = user.game
-  $('.col-4').text('$')
+  $('#gameBoard').trigger('reset')
+  $('.col-4').text('')
+  store.game = response.game
+  $('#game-number').show()
+  // $('#game-number').text("Game Number " + response.game.id)
 }
-const onRefreshGameFailure = function () {
 
+// const onRefreshGameSuccess = function (user) {
+//   $('.user-message').text('New Game!')
+//   store.game = user.game
+//   $('.col-4').text('')
+// }
+const updateGameNumber = function (response) {
+  $('#game-number').text('Game Number ' + response.data.games.id)
 }
-
-const onCreateGameFailure = function () {
-
+const updateGameNumberFail = function () {
+  $('#game-number').text('Game Number ?')
 }
 
 const onGameBtnClickSuccess = function (response) {
@@ -31,14 +29,13 @@ const onGameBtnClickSuccess = function (response) {
 }
 
 const onGameBtnClickFailure = function () {
-
+  $('.user-message').text('failed to')
 }
 
 module.exports = {
   onCreateGameSuccess,
-  onCreateGameFailure,
   onGameBtnClickSuccess,
   onGameBtnClickFailure,
-  onRefreshGameSuccess,
-  onRefreshGameFailure
+  updateGameNumber,
+  updateGameNumberFail
 }
