@@ -39,26 +39,7 @@ const onGameBtnClick = function (event) {
       store.currentPlayer = 'o'
       currentPlayer = 'x'
     }
-
-    cell = $(event.target).attr(if (gameArray[0] === currentPlayer && gameArray[1] === currentPlayer && gameArray[2] === currentPlayer) {
-      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-    } else if (gameArray[3] === currentPlayer && gameArray[4] === currentPlayer && gameArray[5] === currentPlayer) {
-      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-    } else if (gameArray[6] === currentPlayer && gameArray[7] === currentPlayer && gameArray[8] === currentPlayer) {
-      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-    } else if (gameArray[0] === currentPlayer && gameArray[3] === currentPlayer && gameArray[6] === currentPlayer) {
-      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-    } else if (gameArray[1] === currentPlayer && gameArray[4] === currentPlayer && gameArray[7] === currentPlayer) {
-      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-    } else if (gameArray[2] === currentPlayer && gameArray[5] === currentPlayer && gameArray[8] === currentPlayer) {
-      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-    } else if (gameArray[0] === currentPlayer && gameArray[4] === currentPlayer && gameArray[8] === currentPlayer) {
-      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-    } else if (gameArray[2] === currentPlayer && gameArray[4] === currentPlayer && gameArray[6] === currentPlayer) {
-      $('.game-message').text(`${switchPlayer(currentPlayer)} wins!`)
-    } else {
-      checkGameStatus(gameArray, currentPlayer, gameOver)
-    }x)
+    cell = $(event.target).attr('data-cell-index')
     store.cell = cell
 
     gameArray[cell] = currentPlayer
@@ -146,7 +127,7 @@ const checkGameStatus = function (array, player) {
   const activePlayer = player
   const gameBoardArray = array
 
-  if
+
   for (let i = 0; i < array.length; i++) {
     if (gameBoardArray.includes('')) {
       $('.game-message').text(`${activePlayer}'s Turn!'`)
@@ -174,7 +155,6 @@ const switchPlayer = function (player) {
     store.currentPlayer = 'o'
     player = 'x'
   }
-  if
 }
 const onWinEvent = function () {
   $('.game-message').text('New Game!')
